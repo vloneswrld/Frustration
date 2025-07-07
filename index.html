@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Frustration - For Ameer 🔥</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #f6d6a8; /* warm amber */
+    font-family: 'Comfortaa', cursive, sans-serif;
+    color: #a04500; /* burnt orange text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 520px;
+    background: rgba(255 255 255 / 0.92);
+    padding: 30px 25px 25px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(160,69,0,0.3);
+    position: relative;
+    z-index: 2;
+  }
+  h1 {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 2.3rem;
+  }
+  .fire-emoji {
+    font-size: 64px;
+    line-height: 1;
+    margin: 0 auto 20px auto;
+    position: relative;
+    display: inline-block;
+  }
+  /* pulsating glow behind the emoji */
+  .fire-emoji::before {
+    content: "🔥";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(8px);
+    opacity: 0.6;
+    animation: pulseGlow 2.5s infinite ease-in-out;
+    z-index: -1;
+  }
+  @keyframes pulseGlow {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    color: #a04500;
+  }
+  button {
+    background-color: #b25d00;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #7a4000;
+  }
+  #calmFrustrationContainer {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #a04500;
+    display: none;
+    user-select: none;
+  }
+  #calmFrustrationEmojis {
+    font-size: 2.8rem;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="content">
+  <h1>Hey babe,</h1>
+  <div class="fire-emoji" aria-hidden="true">🔥</div>
+  <p id="message">
+    Hey love, I know frustration can feel like a fire burning inside, making everything seem overwhelming. But it’s okay to feel this way sometimes — I’m here to help you breathe, relax, and remember that you’re never alone. When the fire gets too strong, click the button — I’m sending calm, warmth, and all my love 🔥🧡✨
+  </p>
+  <button id="calmFrustrationBtn">Here’s some calm for you</button>
+
+  <div id="calmFrustrationContainer" aria-live="polite" role="alert">
+    <div id="calmFrustrationMessage">You are calm, loved, and supported 🔥🧡✨</div>
+  </div>
+</div>
+
+<script>
+  const calmFrustrationBtn = document.getElementById('calmFrustrationBtn');
+  const calmFrustrationContainer = document.getElementById('calmFrustrationContainer');
+
+  calmFrustrationBtn.addEventListener('click', () => {
+    calmFrustrationContainer.style.display = 'block';
+    calmFrustrationBtn.disabled = true;
+    calmFrustrationBtn.style.cursor = 'default';
+    calmFrustrationBtn.style.backgroundColor = '#7a4000';
+  });
+</script>
+
+</body>
+</html>
